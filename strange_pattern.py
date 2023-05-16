@@ -1,13 +1,14 @@
 import numpy as np
 
-# implement the function strange pattern
-
-def strange_pattern():
-    # delete the NotImplementedError when you write your function.
-    raise NotImplementedError
-
+def strange_pattern(shape):
+    n, m = shape
+    pattern = np.zeros((n, m), dtype=bool)
+    pattern[:m:3, 0::3] = True
+    pattern[1:m:3, 2::3] = True
+    pattern[2:m:3, 1::3] = True
+    return pattern
 
 if __name__ == "__main__":
-    # use this for your own testing!
-
-    pass
+    shape = (10, 10)
+    result = strange_pattern(shape)
+    print(result)
